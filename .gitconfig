@@ -1,0 +1,27 @@
+[user]
+    name = xxx
+    email = xxx
+[core]
+    excludesfile = ~/.gitignore
+	autocrlf = input
+[color]
+    ui = auto
+    interactive = auto
+    branch = auto
+    diff = auto
+    status = auto
+    
+[alias]
+    b = branch
+    s = status
+    d = diff
+    co = checkout
+    # https://www.kernel.org/pub/software/scm/git/docs/git-log.html#_pretty_formats
+    lg = log --graph --all --pretty='format:%C(yellow)%h %C(green)%aN %C(dim white)(%cr) %C(cyan)%s'
+    lgwd = log --graph --all --pretty='format:%C(yellow)%h %C(green)%aN %C(dim white)(%cr) %C(cyan)%s' --stat
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[push]
+	default = simple
